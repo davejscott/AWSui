@@ -3,10 +3,7 @@ Created on March 2018
 
 
 @author: 
-	
-▒█▀▀█ █▀▀█ █▀▀▄ █▀▀ ▒█▀▀█ █░░█ ▀▀█▀▀ █▀▀ 
-▒█░░░ █░░█ █░░█ █▀▀ ▒█▀▀▄ █▄▄█ ░░█░░ █▀▀ 
-▒█▄▄█ ▀▀▀▀ ▀▀▀░ ▀▀▀ ▒█▄▄█ ▄▄▄█ ░░▀░░ ▀▀▀ 
+	Invenio
 
 
 """
@@ -17,8 +14,6 @@ Created on March 2018
 
 
 """
-●   A web app to help employers by analysing resumes and CVs, surfacing candidates that best match the position and filtering out those who don't.
-●   Used recommendation engine techniques such as KNN, content based filtering for fuzzy matching job description with multiple resumes.
 
 Prerequisites
 
@@ -30,13 +25,6 @@ Prerequisites
     Antiwords
     autocorrect
 
-
-
-
-        To Run this code: 
-            # python app.py
-
-	And open URL localhost:5000
 
 
 """
@@ -121,9 +109,9 @@ def home():
     print(x)
     return render_template('index.html', results = x)
 
-@app.route("/index", methods=['POST'])
+@app.route("/upload", methods=['POST'])
 def upload():
-    target = os.path.join(APP_ROOT, 'resumes/')
+    target = os.path.join(APP_ROOT, 'Original_Resumes/')
     print(target)
 
     if not os.path.isdir(target):
