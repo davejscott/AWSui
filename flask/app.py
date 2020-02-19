@@ -57,7 +57,7 @@ import pdf2txt as pdf
 import PyPDF2
 
 #import screen
-#import search
+import search
 import hashlib
 
 warnings.filterwarnings(action='ignore', category=UserWarning, module='gensim')
@@ -163,14 +163,14 @@ def upload():
 
 
 
-#@app.route('/resultsearch' ,methods = ['POST', 'GET'])
-#def resultsearch():
-#    if request.method == 'POST':
-#        search_st = request.form.get('Name')
-#        print(search_st)
-#    result = search.res(search_st)
-    # return result
-#    return render_template('result.html', results = result)
+@app.route('/resultsearch' ,methods = ['POST', 'GET'])
+def resultsearch():
+    if request.method == 'POST':
+        search_st = request.form.get('Name')
+        print(search_st)
+    result = search.res( search_st)
+    #return result
+    return render_template('result.html', results = result)
 
 
 @app.route('/Original_Resume/<path:filename>')

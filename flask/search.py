@@ -47,6 +47,9 @@ from bs4 import BeautifulSoup
 from nltk import word_tokenize, sent_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import LancasterStemmer, WordNetLemmatizer
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 
 def remove_non_ascii(words):
     """Remove non-ASCII characters from list of tokenized words"""

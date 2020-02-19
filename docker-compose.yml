@@ -4,7 +4,7 @@ services:
 
     flask:
         build: ./flask
-        container_name: flask1
+        container_name: flask2
         restart: always
         environment: 
             - APP_NAME=MyFlaskApp
@@ -15,7 +15,7 @@ services:
     
     nginx:
         build: ./nginx
-        container_name: nginx1
+        container_name: nginx2
         restart: always
         ports: 
             - "80:80"
